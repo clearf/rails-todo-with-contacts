@@ -1,5 +1,7 @@
 RailsTodo::Application.routes.draw do
+  root :to => 'welcome#index'
   resources :todos
+  resources :contacts
 
   # root :to => 'welcome#index'
   # get '/dogs' => 'dogs#index'
