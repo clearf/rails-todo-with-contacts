@@ -1,0 +1,18 @@
+<h1>Manage Your Workers Here</h1>
+
+<p>Here'a list of your current workers:</p>
+
+<% if @contacts.empty? %>
+  <ul><li>You currently do not have any workers for tasks.</li></ul>
+<% else %>
+  <ul>
+    <% @contacts.each do |contact| %>
+      <li><%= contact.name %> <a href="/contacts/<%= contact.id %>">(Details)</a></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<br>
+<h2>Wanna Add Another Person?</h2>
+<p>Create and add another worker to your to-do list <a href="/contacts/new">here</a></p>
+
