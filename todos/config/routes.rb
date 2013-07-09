@@ -7,6 +7,8 @@ Todos::Application.routes.draw do
   get '/todos/:id/edit' => 'todos#edit'
   put '/todos/:id' => 'todos#update'
   delete '/todos/:id' => 'todos#destroy'
+
+  get '/contacts' => 'contacts#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
