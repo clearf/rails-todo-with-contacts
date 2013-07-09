@@ -3,10 +3,10 @@
 <form action="/todos" method="post">
   <input type="text" name="todo" placeholder="To-do">
   <input type="text" name="notes" placeholder="Notes">
-  <ul>
+  <ul style="list-style-type: none">
     <% @contacts.each do |contact| %>
     <li>
-      <input type='checkbox' name='contacts[]' value='<%= contact.id %>' />
+      <input type='checkbox' name='contact_ids[]' value='<%= contact.id %>' /> <%= "#{contact.first_name} #{contact.last_name}" %>
     </li>
     <% end %>
   </ul>

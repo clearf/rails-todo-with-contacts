@@ -8,7 +8,7 @@ class ContactsController < ApplicationController
   end
 
   def create
-    Contact.create(params)
+    Contact.create(first_name: params[:first_name], last_name: params[:last_name], title: params[:title], phone: params[:phone])
     redirect_to('/contacts')
   end
 

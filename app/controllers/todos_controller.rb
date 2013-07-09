@@ -35,8 +35,10 @@ class TodosController < ApplicationController
     todo.todo = params[:todo]
     todo.notes = params[:notes]
 
-    contacts = params[:contacts]
-    contacts.each do |contact|
+    contacts = Contact.all
+    contact_ids = params[:contact_ids]
+    contact_ids.each do |contact_id|
+      contact = Contact.find(contact_id)
       todo.contacts << contact
     end
 

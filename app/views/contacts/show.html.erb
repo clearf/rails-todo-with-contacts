@@ -1,10 +1,10 @@
-<h1><%= @contact.first_name %></h1>
+<h1><%= "#{@contact.first_name} #{@contact.last_name}" %></h1>
 
 <p><%= @contact.title %></p>
 <p><%= @contact.phone %></p>
 
-<p><a href="/contacts/<%= @contact.id %>/edit">Edit to-do</a></p>
+<p><a href="/contacts/<%= @contact.id %>/edit">Edit contact</a></p>
 <form action="/contacts/<%= @contact.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
-  <button>Delete to-do</button>
+  <button>Delete contact</button>
 </form>
