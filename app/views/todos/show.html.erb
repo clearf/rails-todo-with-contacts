@@ -7,9 +7,10 @@
     Assigned to: <% if @task.contacts.empty? %>
                    <%= "No one currently" %>
                  <% else %>
-                   <%= @task.contacts.each do |person| %>
-                     <ul><li><%= person %></li></ul>
-                   <% end %>
+                    <% @task.contacts.each do |person| %>
+                     <ul><li><a href="/contacts/<%= person[:id] %>"><%= person.name %></a></li></ul>
+                 <% end %>
+
                  <% end %>
   </li>
 </ul>
