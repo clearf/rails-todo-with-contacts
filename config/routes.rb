@@ -3,6 +3,7 @@ RailsTodo::Application.routes.draw do
   root :to => 'todos#index'
 
   resources :todos
+  resources :contacts
 
   get '/about' => 'info#about'
 

@@ -5,12 +5,19 @@ class TodosController < ApplicationController
   end
 
   def new
+    @contacts = Contact.all
   end
 
   def create
     todo = Todo.new()
     todo.todo = params[:todo]
     todo.notes = params[:notes]
+
+    contacts = params[:contacts]
+    contacts.each do |contact|
+      todo.contacts << contact
+    end
+
     todo.save
     redirect_to('/todos')
   end
@@ -27,6 +34,12 @@ class TodosController < ApplicationController
     todo = Todo.find(params[:id])
     todo.todo = params[:todo]
     todo.notes = params[:notes]
+
+    contacts = params[:contacts]
+    contacts.each do |contact|
+      todo.contacts << contact
+    end
+
     if params[:done] == "true"
       todo.done = true
     else
