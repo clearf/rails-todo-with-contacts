@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RailsTodoTwoApp</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<a href="/">Home</a>
+<a href="/todos/">All Todos</a>
+<a href="/todos/new">New Todo</a>
+<%= yield %>
+
+</body>
+</html>

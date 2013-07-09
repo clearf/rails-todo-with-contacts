@@ -1,0 +1,9 @@
+<h1>Edit Todo</h1>
+
+<form action="/todos/<%= @todo.id %>" method="post">
+  <input type="text" name="name" value="<%= @todo.name %>">
+  <input type="text" name="description" value="<%= @todo.description %>">
+  <input type="text" name="due_date" value="<%= @todo.due_date %>">
+  <input type="hidden" name="_method" value="put">
+  <button>Update Todo</button>
+</form>

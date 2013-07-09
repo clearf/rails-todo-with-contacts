@@ -1,0 +1,7 @@
+<h1>Todo's</h1>
+
+<% @todos.each do |todo| %>
+ <a href="/todos/<%= todo.id %>">
+  <%= todo.name %></a>
+
+  <% end %>
