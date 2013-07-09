@@ -3,8 +3,16 @@
 <ul>
   <li>Name: <%= @task.name %></li>
   <li>Description: <%= @task.note %></li>
+  <li>
+    Assigned to: <% if @task.contacts.empty? %>
+                   <%= "No one currently" %>
+                 <% else %>
+                   <%= @task.contacts.each do |person| %>
+                     <ul><li><%= person %></li></ul>
+                   <% end %>
+                 <% end %>
+  </li>
 </ul>
-
 
 <a href="/todos/<%= @task.id %>/edit"><button>Edit this task</button></a>
 
