@@ -3,11 +3,12 @@
 <form action="/todos/<%= @todo.id %>" method="post">
   <input type="text" name="todo" value="<%= @todo.todo %>">
   <input type="text" name="notes" value="<%= @todo.notes %>">
-  <p>Done?</p> <% if @todo.done %>
+  <p>Done? <% if @todo.done %>
     <input type="checkbox" name="done" value="true" checked="yes">
   <% else %>
     <input type="checkbox" name="done" value="true">
   <% end %>
+  </p>
   <input type="hidden" name="_method" value="put">
   <button>Update</button>
 </form>
