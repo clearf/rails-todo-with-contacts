@@ -22,7 +22,17 @@ class ContactsController < ApplicationController
     redirect_to('/contacts')
   end
 
+  def edit
+    @contact = Contact.find(params[:id])
+    name = params[:name]
+  end
 
+  def update
+    contact = Contact.find(params[:id])
+    contact.name = params[:name]
+    contact.save
+    redirect_to "/contacts/#{contact.id}"
+  end
 
 
 
