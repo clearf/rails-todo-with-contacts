@@ -16,7 +16,7 @@ class TodosController < ApplicationController
     todo.description = description
     todo.due_date = due_date
     todo.save
-    redirect_to ('/todos')
+    redirect_to('/todos')
   end
 
   def show
