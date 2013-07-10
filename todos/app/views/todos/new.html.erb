@@ -9,7 +9,7 @@
   <label for="contact_id">Select a contact</label>
   <select name="contact_id">
     <% @contacts.each do |contact| %>
-      <option value="contact_id">
+      <option value="<%= contact.id %>">
         <%= contact.name %>
       </option>
     <% end %>
