@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TodoApp</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <a href="/">Home</a> |
+  <a href="/todos">Tasks</a> |
+  <a href="/todos/new">Add a task</a> |
+  <a href="/contacts">Contacts</a> |
+  <a href="/contacts/new">Add a contact</a>
+<%= yield %>
+
+</body>
+</html>
