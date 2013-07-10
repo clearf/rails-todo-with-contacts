@@ -61,4 +61,14 @@ class TasksController < ApplicationController
 		@contacts = Contact.all
 	end
 
+	def add_update
+		contact = Contact.find(params[:person])
+		task=Task.find(params[:id])
+		unless task.contacts.include? contact
+			task.contacts << contact
+		end
+		task.save
+		redirect_to "/tasks/#{params[:id]}"
+	end
+
 end

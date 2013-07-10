@@ -16,10 +16,14 @@
 			<%end%>
 		</ul>
 <% else %>
-	<p> No one has been assigned this task </p>
+	<p> No one has been assigned to this task, assign somebody </p>
 <%end%>
 
 
+<form action ="/tasks/<%=@task.id%>/add" method = "get">
+	<input type = "hidden" name = "edit">
+	<button>Add Contact to Task</button>
+</form>
 
 <form action = "/tasks/<%=@task.id%>/edit" method = "get">
 	<input type = "hidden" name = "edit">
