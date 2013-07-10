@@ -27,8 +27,6 @@ ActiveRecord::Schema.define(:version => 20130709213152) do
     t.integer "todo_id"
   end
 
-  add_index "contacts_todos", ["contact_id", "todo_id"], :name => "index_contacts_todos_on_contact_id_and_todo_id", :unique => true
-
   create_table "todos", :force => true do |t|
     t.string   "todo"
     t.text     "notes"
