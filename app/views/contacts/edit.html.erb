@@ -1,0 +1,9 @@
+<h1>Edit Contact</h1>
+
+<form action="/contacts/<%= @contact.id %>" method="post">
+  <input type="text" name="name" value="<%= @contact.name %>">
+  <input type="text" name="phone" value="<%= @contact.phone %>">
+  <input type="text" name="gender" value="<%= @contact.gender %>">
+  <input type="hidden" name="_method" value="put">
+  <button>Update Contact</button>
+</form>

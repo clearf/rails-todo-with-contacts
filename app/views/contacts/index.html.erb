@@ -1,0 +1,6 @@
+<h1>Contact's</h1>
+
+<% @contacts.each do |contact| %>
+ <a href="/contacts/<%= contact.id %>">
+  <%= contact.name %></a>
+  <% end %>
