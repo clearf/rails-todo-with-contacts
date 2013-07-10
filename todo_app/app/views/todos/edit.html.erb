@@ -4,6 +4,17 @@
   Description: <input type="text" name="description" value="<%= @todo.description %>"><br/>
   Due Date: <input type="text" name="due_date" value="<%= @todo.due_date %>"><br/>
   Completed (true/false): <input type="text" name="completed" value="<%= @todo.completed %>"><br/>
+  Contacts: <% @todo.contacts.each do |person| %>
+    <%= person.name %><br/>
+  <% end %>
+  Add Contact to Task: <select name="contact">
+    <% @contacts.each do |person| %>
+      <option value="<%= person.id %>">
+          <%= person.name %>
+      </option>
+    <% end %>
+    </select>
+
   <input type="hidden" name="_method" value="put">
   <button>Edit</button>
 </form>
