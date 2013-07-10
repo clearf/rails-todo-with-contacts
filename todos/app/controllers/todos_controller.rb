@@ -11,10 +11,12 @@ class TodosController < ApplicationController
     name = params[:name]
     description = params[:description]
     due_date = params[:due_date]
+    contact = Contact.find(params[:contact_id])
     todo = Todo.new
     todo.name = name
     todo.description = description
     todo.due_date = due_date
+    todo.contacts << contact
     todo.save
     redirect_to '/todos'
   end

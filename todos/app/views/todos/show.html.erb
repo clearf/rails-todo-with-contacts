@@ -2,6 +2,15 @@
 <ul>
   <li>Description: <%= @todo.description %></li>
   <li>Do this by: <%= @todo.due_date %></li>
+  <li>Contacts:
+    <ul>
+      <% @todo.contacts.each do |contact| %>
+        <li>
+          <%= contact.name %>
+        </li>
+      <% end %>
+    </ul>
+  </li>
 </ul>
 
 <a href="/todos/<%= @todo.id %>/edit">Edit To-Do</a>
