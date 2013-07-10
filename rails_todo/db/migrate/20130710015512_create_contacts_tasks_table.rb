@@ -3,7 +3,6 @@ class CreateContactsTasksTable < ActiveRecord::Migration
     create_table :contacts_tasks, id: false do |t|
       t.belongs_to :contact
       t.belongs_to :task
-      t.timestamps
     end
   end
 

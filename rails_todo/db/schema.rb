@@ -20,10 +20,8 @@ ActiveRecord::Schema.define(:version => 20130710015512) do
   end
 
   create_table "contacts_tasks", :id => false, :force => true do |t|
-    t.integer  "contact_id"
-    t.integer  "task_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer "contact_id"
+    t.integer "task_id"
   end
 
   create_table "tasks", :force => true do |t|
