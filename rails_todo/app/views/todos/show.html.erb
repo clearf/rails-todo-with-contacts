@@ -1,0 +1,10 @@
+<h1><%= @todo.title %></h1>
+<h2><%= @todo.description %></h2>
+
+<p><a href="/todos/<%= @todo.id %>/edit">Edit to-do</a><p>
+
+<form action="/todos/<%= @todo.id %>" method="post">
+  <input type='hidden' name="_method" value="delete">
+  <button>Delete To-Do</button>
+</form>
+
