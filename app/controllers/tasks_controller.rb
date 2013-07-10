@@ -27,7 +27,7 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
-    @contact = Contact.name
+    @contacts = Contact.all
   end
 
   def update
