@@ -20,12 +20,14 @@ class TasksController < ApplicationController
 			urgent = false
 		end
 		task.urgent = urgent
+		task.contacts << Contact.find(params[:person])
 		task.save
 		redirect_to('/tasks')
 	end
 
 	def show
 		@task=Task.find(params[:id])
+		@contacts = @task.contacts
 	end
 
 	def edit
@@ -53,4 +55,10 @@ class TasksController < ApplicationController
 		Task.find(params[:id]).delete
 		redirect_to('/tasks')
 	end
+
+	def add
+		@task=Task.find(params[:id])
+		@contacts = Contact.all
+	end
+
 end

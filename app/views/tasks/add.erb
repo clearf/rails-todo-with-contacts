@@ -1,0 +1,13 @@
+<h2> Add a Contact to this Task </h2>
+<form action='/tasks/<%=@task.id%>/add' method="post">
+	<input type="hidden" name="_method" value="put">
+	<% if @contacts %>
+		<select type="dropdown" name="person">
+			<%@contacts.each do |contact|%>
+				<option value="<%=contact.id%>"><%=contact.name%></option>
+			<%end%>	
+		</select>
+	<%else%>
+		<a href="/contacts/new">Create Some Contacts</a>
+	<%end%>
+</form>
