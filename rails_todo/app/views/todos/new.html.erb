@@ -1,0 +1,17 @@
+<h1>Create a new Task!</h1>
+
+<form action="/todos" method="post">
+  <br><label for="task">Create A Task</label>
+  <input type="text" name="task" placeholder="task"></br>
+  <br><label for="task_description">Describe the Task</label>
+  <input type="text" name="task_description" placeholder="task description"></br>
+  <br><label for="contact_id">Assign a Contact</label>
+   <select = "contact">
+      <% @contacts.each do |contact| %>
+        <option value="<%= contact.id %>">
+          <%= contact.name %>
+          <%end%>
+        </option>
+    </select></br>
+  <button>Enter New Todo</button>
+</form>

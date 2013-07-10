@@ -1,0 +1,10 @@
+<h1>Task:<%= @todo.task %></h1>
+
+<h3>Description:<%= @todo.task_description %></h3>
+
+<a href="/todos/<%=@todo.id%>/edit">Edit the Task</a>
+
+<form action="/todos/<%=@todo.id%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button>Delete Task</button>
+</form>

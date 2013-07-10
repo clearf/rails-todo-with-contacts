@@ -1,0 +1,14 @@
+<h1>Populates an individual page</h1>
+
+<h1>Contact:<%= @contact.name %></h1>
+
+<h3>Contacts Title:<%= @contact.title %></h3>
+
+
+
+
+<a href="/contacts/<%=@contact.id%>/edit">Edit Contact</a>
+<form action="/contacts/<%= @contact.id%>" method="post">
+<input type="hidden" name="_method" value="delete">
+<button>Delete Contact</button>
+</form>

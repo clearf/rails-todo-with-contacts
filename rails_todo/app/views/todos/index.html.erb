@@ -1,0 +1,11 @@
+<h1>Tasks</h1>
+
+
+<% @todos.each do |todo| %>
+  <ul>
+    <li><b><a href="/todos/<%=todo.id%>"><%= todo.task %> </a></b></li>
+      <ul>
+        <li> <%= todo.task_description %> </li>
+      </ul>
+  </ul>
+<%end %>

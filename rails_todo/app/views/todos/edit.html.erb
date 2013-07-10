@@ -1,0 +1,9 @@
+<h1>Edit A Task</h1>
+
+
+<form action="/todos/<%=@todo.id%>" method="post">
+  <input type="text" name="task" value="<%=@todo.task%>">
+  <input type="text" name="task_description" value="<%=@todo.task_description%>">
+  <input type="hidden" name="_method" value="put">
+  <button>Edit this task</button>
+</form>
