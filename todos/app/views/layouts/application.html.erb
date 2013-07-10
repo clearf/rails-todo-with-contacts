@@ -7,11 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<a href="/">Home</a>
-<a href="/todos">See To-Dos</a>
-<a href="/todos/new">Create a New To-Do</a>
-<a href="/contacts">See Contacts</a>
-<a href="/contacts/new">Create a New Contact</a>
+<%= link_to("Home", root_path) %>
+<%= link_to("See To-Dos", todos_path) %>
+<%= link_to("Create a New To-Do", todos_new_path) %>
+<%= link_to("See Contacts", contacts_path) %>
+<%= link_to("Create a New Contact", contacts_new_path) %>
 <%= yield %>
 
 </body>
