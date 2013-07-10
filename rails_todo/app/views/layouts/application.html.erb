@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>do all of the things</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<a href="/">home</a>
+<a href="/tasks">tasks</a>
+<a href="/tasks/new">new task</a>
+<a href="/contacts">contacts</a>
+<a href="/contacts/new">new contact</a>
+<%= yield %>
+
+</body>
+</html>

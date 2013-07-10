@@ -1,0 +1,11 @@
+<h1><%= @contact.name %></h1>
+
+
+<form action="/contacts/<%= @contact.id %>/edit" method="get">
+<button>edit contact</button>
+</form>
+
+<form action="/contacts/<%= @contact.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button>delete contact</button>
+</form>
