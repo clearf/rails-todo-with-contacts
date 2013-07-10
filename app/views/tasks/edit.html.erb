@@ -1,0 +1,23 @@
+<div class="well">
+  <h2>Edit Task <%= @task.id %></h2>
+
+  <form action="/tasks/<%= @task.id %>" method="post">
+    <p>Task: <input type="text" name="name" value="<%= @task.name %>"></p>
+    <p>Details: <input type="text" name="details" value="<%= @task.details %>"></p>
+
+    <p>Add Responsible Person: <select name="contact">
+      <% @contacts.each do |contact| %>
+        <option value="<%= contact.id %>"><%= contact.name %></option>
+      <% end %>
+    </select></p>
+
+    <p>Due Date: <input type="date" name="duedate" value="<%= @task.duedate %>"></p>
+    <% if @task.status == false %>
+    <p>Status: <input type="radio" name="status" value="true"><label for="status_completed">Completed</label><input type="radio" name="status" value="false" checked><label for="status_progress">In Progress</label></p>
+    <% else %>
+      <p>Status: Completed</p>
+    <% end %>
+    <input type="hidden" name="_method" value="put">
+    <button class="btn btn-info">Submit</button>
+  </form>
+</div>

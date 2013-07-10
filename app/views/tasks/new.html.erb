@@ -1,0 +1,15 @@
+<h1>Add Task</h1>
+
+<form action="/tasks" method="post">
+  <p>Task: <input type="text" name="name"></p>
+  <p>Details: <input type="text" name="details"></p>
+
+  <p>Responsible Person: <select name="contact">
+    <%= @contacts.each do |contact| %>
+      <option value="<%= contact.id %>"><%= contact.name %></option>
+    <% end %>
+  </select></p>
+  <p>Due Date: <input type="date" name="duedate"></p>
+  <p>Status: <input id="status_completed" type="radio" name="status" value="true">Completed<input id="status_progerss" type="radio" name="status" value="false" checked>In Progress</p>
+  <button class="btn btn-info">Submit</button>
+</form>

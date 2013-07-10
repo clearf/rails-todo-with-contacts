@@ -1,0 +1,8 @@
+<div class="well">
+  <h2>All Tasks</h2>
+
+  <% @tasks.each do |task| %>
+    <p><a href="/tasks/<%= task.id %>"><%= task.name %></a></p>
+  <% end %>
+<a href="/tasks/new"><button class="btn btn-info">Add Task</button></a>
+</div>

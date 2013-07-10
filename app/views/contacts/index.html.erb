@@ -1,0 +1,7 @@
+<div class="well">
+  <h2>All Contacts</h2>
+  <% @contacts.each do |contact| %>
+    <p><%= contact.name %></p>
+  <% end %>
+  <a href="contacts/new"><button class="btn btn-info">Add Contact</button></a>
+</div>
