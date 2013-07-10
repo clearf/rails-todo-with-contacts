@@ -1,0 +1,7 @@
+<h1>"How do you spell that?"</h1>
+<form action = "/contacts/<%= @contact.id %>" method = 'post'>
+  <input type="hidden" name="_method" value="put">
+  <input type="text"name="name"value="<%= @contact.name %>">
+</br>
+  <button>Save Name</button>
+</form>

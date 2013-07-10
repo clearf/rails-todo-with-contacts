@@ -1,7 +1,7 @@
   <h1>Contacts</h1>
-  <% @contacts.each do |person| %>
+  <% @contacts.each do |contact| %>
     <p>
-      <%= person.name %>
+      <a href = "contacts/<%= contact.id %>"><%=contact.name%></a>
     </p>
   <% end %>
   <a href="contacts/new"><button>Add Contact</button></a>
