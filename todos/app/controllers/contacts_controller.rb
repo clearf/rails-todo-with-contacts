@@ -5,4 +5,14 @@ class ContactsController < ApplicationController
 
   def new
   end
+
+  def create
+    name = params[:name]
+    phone = params[:phone]
+    contact = Contact.new
+    contact.name = name
+    contact.phone = phone
+    contact.save
+    redirect_to '/contacts'
+  end
 end
