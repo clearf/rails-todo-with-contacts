@@ -33,7 +33,11 @@ class TodosController < ApplicationController
     task_to_edit = Todo.find(params[:id])
     task_to_edit.name = params[:name]
     task_to_edit.note = params[:note]
-    task_to_edit.contacts << Contact.find(params[:contact])
+
+    unless task_to_edit.contacts.map(&:id).include?(params[:contact].to_i)
+      task_to_edit.contacts << Contact.find(params[:contact])
+    end
+
     task_to_edit.save
     redirect_to("/todos/#{params[:id]}")
   end

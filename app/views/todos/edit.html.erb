@@ -7,11 +7,12 @@
   Assign this task to:
   <select name="contact">
       <% @contacts.each do |person| %>
-        <option value="<%= person.id %>">
+        <option value="<%= person[:id] %>">
           <%= person.name %>
         </option>
       <% end %>
   </select>
+
   <br/>
   <input type="hidden" name="_method" value="PUT">
   <button>Save this edit</button>
