@@ -27,6 +27,7 @@ class TodosController < ApplicationController
 
   def edit
     @todo = Todo.find(params[:id])
+    @contacts = Contact.all
   end
 
   def update
