@@ -1,0 +1,14 @@
+<h2> Remove Contact From Task </h2>
+<form action="/tasks/<%=@task.id%>/remove" method="post">
+	<input type="hidden" name="_method" value="put">
+	<select type="dropdown" name ="person">
+		<%if @contacts %>
+			<%@contacts.each do |contact|%>
+				<option value="<%=contact.id%>"><%=contact.name%></option>
+			<%end%>
+		<%else%>
+			<h3>No Contacts Assigned</h3>
+		<%end%>
+	<select>
+	<button>Remove Contact From Task</button>
+</form>

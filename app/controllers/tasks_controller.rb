@@ -71,4 +71,17 @@ class TasksController < ApplicationController
 		redirect_to "/tasks/#{params[:id]}"
 	end
 
+	def remove
+		@task = Task.find(params[:id])
+		@contacts = @task.contacts
+	end
+
+	def remove_update
+		task = Task.find(params[:id])
+		contact = Contact.find(params[:person])
+		task.contacts.delete(contact)
+		task.save
+		redirect_to '/tasks'
+	end
+
 end
