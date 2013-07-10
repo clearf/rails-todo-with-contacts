@@ -3,6 +3,12 @@
 <form action="/todos/<%= @todo.id %>" method="post">
   <input type="text" name="todo" value="<%= @todo.todo %>">
   <input type="text" name="notes" value="<%= @todo.notes %>">
+  <p>Assigned to:</p>
+  <% @contacts.each do |contact| %>
+    <li>
+      <input type='checkbox' name='contact_ids[]' value='<%= contact.id %>' /> <%= "#{contact.first_name} #{contact.last_name}" %>
+    </li>
+    <% end %>
   <p>Done? <% if @todo.done %>
     <input type="checkbox" name="done" value="true" checked="yes">
   <% else %>

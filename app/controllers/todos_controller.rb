@@ -29,6 +29,7 @@ class TodosController < ApplicationController
 
   def edit
     @todo = Todo.find(params[:id])
+    @contacts = Contact.all
   end
 
   def update
@@ -38,8 +39,13 @@ class TodosController < ApplicationController
 
     contact_ids = params[:contact_ids]
     contact_ids.each do |contact_id|
-      contact = Contact.find(contact_id)
-      todo.contacts << contact
+      todo.contacts.each do |todo_contact|
+        if todo_contact.id == contact_id
+          break
+        end
+        contact_to_add = Contact.find(contact_id)
+        todo.contacts << contact_to_add
+      end
     end
 
     if params[:done] == "true"
