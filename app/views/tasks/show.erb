@@ -1,0 +1,36 @@
+<h1>Task Details </h1>
+<h2>Task: <%=@task.todo%></h2>
+<p>Task Description: <%=@task.description%></p>
+<p>Due: <%=@task.due%></p>
+
+<% if @contacts %>
+	<h3>Responsible: </h3>
+		<ul>
+			<%@contacts.each do |contact|%>
+				<li><a href = "/contacts/<%=contact.id%>"><%=contact.name%></a></li>
+			<%end%>
+		</ul>
+<% else %>
+	<p> No one has been assigned to this task, assign somebody </p>
+<%end%>
+
+
+<form action ="/tasks/<%=@task.id%>/add" method = "get">
+	<input type = "hidden" name = "add">
+	<button>Add Contact to Task</button>
+</form>
+
+<form action ='/tasks/<%=@task.id%>/remove' method="get">
+	<input type = "hidden" name = "remove">
+	<button>Remove Contact from Task</button>
+</form>
+
+<form action = "/tasks/<%=@task.id%>/edit" method = "get">
+	<input type = "hidden" name = "edit">
+	<button> Edit Task </button>
+</form>
+
+<form action="/tasks/<%=@task.id%>" method="post">
+	<input type="hidden" name="_method" value="delete">
+	<button> Remove Task </button>
+</form>

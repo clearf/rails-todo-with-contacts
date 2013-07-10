@@ -1,0 +1,13 @@
+<form action = "/tasks" method = 'post'>
+	<input type = "text" name = "todo" placeholder = "todo">
+	<input type = "text" name = "description" placeholder = "description">
+	<input type= "date" name = "due" placeholder = "due">
+	<% if @contacts %>
+		<select type="dropdown" name="person">
+			<%@contacts.each do |contact|%>
+				<option value = "<%=contact.id%>"><%=contact.name%></option>
+			<%end%>
+		</select>
+	<%end%>
+ 	<button>Add Task</button>
+</form>
