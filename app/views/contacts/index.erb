@@ -2,7 +2,7 @@
 <% if @contacts %>
 	<ul>
 		<%@contacts.each do |contact|%>
-			<li><a href = "<%=contact.id%>"><%=contact.name%></a></li>
+			<li><a href = "contacts/<%=contact.id%>"><%=contact.name%></a></li>
 		<%end%>
 	</ul>
 <%else%>
