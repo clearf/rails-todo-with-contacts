@@ -4,6 +4,7 @@ class TodosController < ApplicationController
   end
 
   def new
+    @contacts = Contact.all
   end
 
   def edit
@@ -19,6 +20,8 @@ class TodosController < ApplicationController
     new_task = Todo.new
     new_task.name = params[:name]
     new_task.note = params[:note]
+    new_task.contacts << Contact.find(params[:contact])
+
     new_task.save
     redirect_to('/todos')
   end
