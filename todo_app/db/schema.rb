@@ -13,7 +13,18 @@
 
 ActiveRecord::Schema.define(:version => 20130708205959) do
 
+  create_table "contacts", :force => true do |t|
+    t.integer "todos_id"
+    t.string  "name"
+  end
+
+  create_table "contacts_todos", :id => false, :force => true do |t|
+    t.integer "contact_id"
+    t.integer "todo_id"
+  end
+
   create_table "todos", :force => true do |t|
+    t.integer "contacts_id"
     t.string  "task"
     t.string  "description"
     t.string  "due_date"
