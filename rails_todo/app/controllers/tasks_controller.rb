@@ -7,10 +7,14 @@ class TasksController < ApplicationController
     @contacts = Contact.all
   end
 
+
   def create
     new_task = Task.new
     new_task.name = params[:name]
     new_task.description = params[:description]
+    unless new_task.contacts.include? (Contact.find(params[:contact_id]))
+      new_task.contacts << Contact.find(params[:contact_id])
+    end
     new_task.save
     redirect_to '/tasks'
   end

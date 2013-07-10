@@ -1,6 +1,13 @@
 <form action="/tasks/<%= @task.id %>" method="post">
-  <input type="text" name="name" value="<%= @task.name %>" />
-  <input type="text" name="description" value="<%= @task.description %>" />
+  <ul>
+  <li><input type="text" name="name" value="<%= @task.name %>" /></li>
+    <li><input type="text" name="description" value="<%= @task.description %>" /></li>
+  <select>
+    <% @task.contacts.each do |contact| %>
+    <li><option value="<%= contact.id %>"><%= contact.name %></option></li>
+    <% end %>
+  </select>   <br />
   <input type="hidden" name="_method" value="put" />
   <button>Edit this task</button>
+  </ul>
 </form>

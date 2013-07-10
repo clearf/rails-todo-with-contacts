@@ -10,6 +10,8 @@ class ContactsController < ApplicationController
   def create
     contact = Contact.new
     contact.name = params[:name]
+    #unless
+    contact.tasks << Task.find(params[:task_id])
     contact.save
     redirect_to '/contacts'
   end
