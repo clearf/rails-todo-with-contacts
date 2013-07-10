@@ -1,0 +1,12 @@
+<h1>Add a new task here</h1>
+<form action="/tasks" method="post">
+  Task name: <br /><input type="text" name="name" autofocus />  <br />
+  Task description: <br /><input type="text" name="description" /> <br />
+  Pick a contact: <br />
+  <select name="contact_id">
+    <% @contacts.each do |contact| %>
+        <option value="<%= contact.id %>"><%= contact.name %></option>
+    <% end %>
+  </select>
+  <button>Add New Task</button>
+</form>

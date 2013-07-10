@@ -1,0 +1,39 @@
+class ContactsController < ApplicationController
+  def index
+    @contacts = Contact.all
+  end
+
+  def new
+    @tasks = Task.all
+  end
+
+  def create
+    contact = Contact.new
+    contact.name = params[:name]
+    #unless
+    contact.tasks << Task.find(params[:task_id])
+    contact.save
+    redirect_to '/contacts'
+  end
+
+  def show
+    @contact = Contact.find(params[:id])
+  end
+
+  def edit
+     @contact = Contact.find(params[:id])
+  end
+
+  def update
+    contact = Contact.find(params[:id])
+    contact.name = params[:id]
+    contact.save
+    redirect_to '/contacts'
+  end
+
+  def destroy
+    contact = Contact.find(params[:id])
+    contact.destroy
+    redirect_to '/contacts'
+  end
+end
