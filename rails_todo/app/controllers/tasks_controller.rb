@@ -32,7 +32,12 @@ class TasksController < ApplicationController
     task.name = params[:name]
     task.info = params[:info]
     task.done = params[:done]
-    task.contacts << Contact.find(params[:contact])
+
+    if task.contacts.include? Contact.find(params[:contact])
+        # error message
+      else
+      task.contacts << Contact.find(params[:contact])
+    end
 
     task.save
     redirect_to "/tasks"
