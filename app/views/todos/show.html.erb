@@ -1,0 +1,25 @@
+<h2><%= @todo.todo %></h2>
+
+<p><%= @todo.notes %></p>
+
+<p>Assigned to:</p>
+
+<ul>
+  <% @todo.contacts.each do |contact| %>
+  <li><%= "#{contact.first_name} #{contact.last_name}" %></li>
+  <% end %>
+</ul>
+
+<p>Done?
+  <% if @todo.done %>
+    Yes
+  <% else %>
+    No
+  <% end %>
+</p>
+
+<p><a href="/todos/<%= @todo.id %>/edit">Edit to-do</a></p>
+<form action="/todos/<%= @todo.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button>Delete to-do</button>
+</form>

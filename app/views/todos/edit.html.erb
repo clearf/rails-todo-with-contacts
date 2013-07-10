@@ -1,0 +1,24 @@
+<h1>Edit To-Do</h1>
+
+<form action="/todos/<%= @todo.id %>" method="post">
+  <input type="text" name="todo" value="<%= @todo.todo %>">
+  <input type="text" name="notes" value="<%= @todo.notes %>">
+  <p>Assigned to:</p>
+  <% @contacts.each do |contact| %>
+    <li>
+      <% if @todo.contacts.include?(contact) %>
+      <input type='checkbox' name='contact_ids[]' value='<%= contact.id %>' checked='yes'/> <%= "#{contact.first_name} #{contact.last_name}" %>
+      <% else %>
+      <input type='checkbox' name='contact_ids[]' value='<%= contact.id %>' /> <%= "#{contact.first_name} #{contact.last_name}" %>
+      <% end %>
+    </li>
+    <% end %>
+  <p>Done? <% if @todo.done %>
+    <input type="checkbox" name="done" value="true" checked="yes">
+  <% else %>
+    <input type="checkbox" name="done" value="true">
+  <% end %>
+  </p>
+  <input type="hidden" name="_method" value="put">
+  <button>Update</button>
+</form>

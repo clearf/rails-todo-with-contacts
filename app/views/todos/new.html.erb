@@ -1,0 +1,14 @@
+<h1>Add to-do</h1>
+
+<form action="/todos" method="post">
+  <input type="text" name="todo" placeholder="To-do">
+  <input type="text" name="notes" placeholder="Notes">
+  <ul style="list-style-type: none">
+    <% @contacts.each do |contact| %>
+    <li>
+      <input type='checkbox' name='contact_ids[]' value='<%= contact.id %>' /> <%= "#{contact.first_name} #{contact.last_name}" %>
+    </li>
+    <% end %>
+  </ul>
+  <button>Add</button>
+</form>
