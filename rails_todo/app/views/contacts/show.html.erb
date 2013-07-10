@@ -5,3 +5,8 @@
       <li><%= task.name %></li>
   <% end %>
 </ul>
+
+<form action="/contacts/<%= @contact.id %>" method="post">
+  <input type="hidden" name="_method" value="delete" />
+  <button>Delete Contact</button>
+</form>

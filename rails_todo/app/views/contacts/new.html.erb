@@ -3,7 +3,7 @@
   Contact name: <br /><input type="text" name="name" autofocus />  <br />
   Pick a task: <br />
 
- <select name="<%= task.id %>">
+ <select name="<%= @tasks_id %>">
   <% @tasks.each do |task| %>
         <option value="<%= task.id %>"><%= task.name %></option>
   <% end %>
