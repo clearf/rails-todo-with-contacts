@@ -4,6 +4,7 @@ class ContactsController < ApplicationController
   end
 
   def new
+    @tasks = Task.all
   end
 
   def create
