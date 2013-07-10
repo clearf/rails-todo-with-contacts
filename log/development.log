@@ -270,3 +270,11 @@ Processing by ContactsController#index as HTML
   [1m[35mContact Load (0.1ms)[0m  SELECT "contacts".* FROM "contacts" 
   Rendered contacts/index.erb within layouts/application (0.0ms)
 Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms)
+Connecting to database specified by database.yml
+  [1m[36m (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to Tasks (20130709012135)
+Migrating to Contacts (20130710001030)
+Migrating to ContactsTasksTable (20130710001330)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml

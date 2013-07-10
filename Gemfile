@@ -22,6 +22,8 @@ end
 
 gem 'jquery-rails'
 
+gem 'unicorn'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -38,6 +40,8 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 group :development, :test do
+  gem 'rspec-rails'
+  gem 'sqlite3'
   gem 'pry-rails'           # Causes rails console to open pry
                             # https://github.com/rweng/pry-rails
   gem 'pry-debugger'        # Adds step, next, finish, and continue commands and breakpoints
@@ -54,4 +58,8 @@ group :development, :test do
                             # https://github.com/banister/binding_of_caller
   gem 'meta_request'        # Supporting gem for Rails Panel (Google Chrome extension for Rails development).
                             # https://github.com/dejan/rails_panel/tree/master/meta_request
+end
+
+group :production do
+  gem 'pg'
 end
