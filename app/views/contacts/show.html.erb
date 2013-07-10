@@ -3,4 +3,11 @@
 <h3>Tasks assigned: </h3>
 <% @contact.tasks.each do |task| %>
   <%= task.task_info %>
-  <% end %>
+  <% end %><br><br>
+
+<a href="/contacts/<%= @contact.id %>/edit">Edit Contact</a>
+
+<form action="/contacts/<%= @contact.id %>" method="POST">
+  <input type="hidden" name="_method" value="delete">
+  <button>Delete contact</button>
+</form>

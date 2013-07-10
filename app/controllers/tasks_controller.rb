@@ -8,15 +8,19 @@ end
 def new
   task_info = params[:task_info]
   due_date = params[:due_date]
+  @contact = Contact.all
 end
 
 def create
   task_info = params[:task_info]
-  due_date = params[:due_date]
   task = Task.new
   task.task_info = task_info
   task.due_date = due_date
   task.save
+  #Assign this task to an existing contact
+  contact = Contact.find(params[:contact])
+  contact.tasks << task
+  contact.save
   redirect_to('/tasks')
 end
 

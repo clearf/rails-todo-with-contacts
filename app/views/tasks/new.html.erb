@@ -4,5 +4,14 @@
   <input type="text" name="task_info" placeholder="Input task"><br><br>
   <label for="date">To be completed by (optional): </label><br>
   <input type="date" name="due_date"><br><br>
+  <label>Assign a contact responsible for this task: </label>
+
+  <select name="contact">
+    <% @contact.each do |contact| %>
+    <option value="<%= contact.id %>"><%= contact.name %></option>
+    <% end %>
+  </select>
+
+
   <button>Create task</button>
 </form>
