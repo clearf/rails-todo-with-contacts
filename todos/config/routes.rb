@@ -13,6 +13,7 @@ Todos::Application.routes.draw do
   post '/contacts' => 'contacts#create'
   get '/contacts/:id' => 'contacts#show'
   get '/contacts/:id/edit' => 'contacts#edit'
+  put '/contacts/:id' => 'contacts#update'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
