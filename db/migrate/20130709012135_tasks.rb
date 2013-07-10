@@ -4,7 +4,7 @@ class Tasks < ActiveRecord::Migration
   		t.string :todo
   		t.string :description
   		t.string :due
-  		t.boolean :urgent, default: true
+  		t.boolean :urgent, default: false
   		t.timestamps
   	end
   end
