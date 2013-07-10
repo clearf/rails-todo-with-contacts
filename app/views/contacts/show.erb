@@ -1,0 +1,24 @@
+<h2>Contact Profile</h2>
+<h3><%=@contact.name%></h3>
+<h4>Email: <%=@contact.email%></h4>
+<h4>Phone: <%=@contact.phone%></h4>
+<h4>Assigned Tasks:</h4>
+<%if @tasks %>
+	<ul>
+		<%@tasks.each do |task|%>
+			<li><a href = "/tasks/<%=task.id%>"><%=task.todo%></a></li>
+		<%end%>
+	</ul>
+<%else %>
+	<h5>None Yet!</h5>
+<%end%>
+
+<form action = "/contacts/<%=@contact.id%>/edit" method = "get">
+	<input type = "hidden" name = "edit">
+	<button> Edit Contact </button>
+</form>
+
+<form action="/contacts/<%=@contact.id%>" method="post">
+	<input type="hidden" name="_method" value="delete">
+	<button> Remove Contact </button>
+</form>
