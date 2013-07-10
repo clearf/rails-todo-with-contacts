@@ -14,7 +14,7 @@ class ContactsController < ApplicationController
     contact = Contact.new
     contact.name = name
     contact.phone = phone
-    contact.due_date = gender
+    contact.gender = gender
     contact.save
     redirect_to('/contacts')
   end
