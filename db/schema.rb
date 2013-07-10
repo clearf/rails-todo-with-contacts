@@ -30,8 +30,9 @@ ActiveRecord::Schema.define(:version => 20130710003604) do
     t.string   "name"
     t.string   "description"
     t.string   "due_date"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "contact_name"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
 end

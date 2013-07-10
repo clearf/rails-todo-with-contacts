@@ -4,6 +4,7 @@ class CreateTodos < ActiveRecord::Migration
       t.string :name
       t.string :description
       t.string :due_date
+      t.string :contact_name
       t.timestamps
     end
   end
