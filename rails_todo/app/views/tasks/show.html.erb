@@ -1,6 +1,12 @@
 <ul>
-<li><%= @task.name %> </li>
-<li><%= @task.description %></li>
+    <li><%= @task.name %> </li>
+    <li><%= @task.description %></li>
+    <li>People on tasks:</li>
+  <ul>
+<% @task.contacts.each do |contact| %>
+    <li><%= contact.name %></li>
+<% end %>
+  </ul>
 </ul>
 <p>
   <a href="/tasks/<%= @task.id %>/edit">Edit Task</a>

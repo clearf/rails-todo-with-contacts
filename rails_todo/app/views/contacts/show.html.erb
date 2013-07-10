@@ -1,0 +1,7 @@
+<h2><%= @contact.name %></h2>
+<li>Tasks:</li>
+<ul>
+  <% @contact.tasks.each do |task| %>
+      <li><%= task.name %></li>
+  <% end %>
+</ul>

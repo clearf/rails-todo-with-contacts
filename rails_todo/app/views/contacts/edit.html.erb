@@ -1,0 +1,5 @@
+<form action="/contacts/<%= @contact.id %>" method="post">
+  <input type="text" name="name" value="<%= @task.name %>" />
+  <input type="hidden" name="_method" value="put" />
+  <button>Edit this contact</button>
+</form>
