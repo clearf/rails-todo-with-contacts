@@ -9,6 +9,11 @@
   <p>Due:
     <%= @task.due %>
   </p>
+  <p>Person Assigned:
+    <% @task.contacts.each do |contact| %>
+      <li><%= contact.name %></li>
+    <% end %>
+  </p>
   <p>Status:
     <% if @task.status == false %>
       <%= "Working on it" %>

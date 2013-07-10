@@ -6,6 +6,13 @@
 </br>
   <input type="date" name="due" placeholder = "Due">
 </br>
+  <p>Person Assigned:
+    <select name="contact">
+    <%= @contacts.each do |contact| %>
+      <option value="<%= contact.id %>"><%= contact.name %></option>
+    <% end %>
+    </select>
+  </p>
   <input id="status_done" type="radio" name="status" value="true"><label for="status_completed">Completed</label>
 </br>
   <input id="status_in_progress" type="radio" name="status" value="false"><label for "status_progress">In Progress</label>

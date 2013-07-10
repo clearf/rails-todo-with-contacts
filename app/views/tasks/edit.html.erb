@@ -5,6 +5,13 @@
     <p>Details: <input type="text" name="details" value="<%= @task.details %>"></p>
 
 
+    <p>Person Assigned:
+      <select name="contact">
+      <% @contacts.each do |contact| %>
+        <option value="<%= contact.id %>"><%= contact.name %></option>
+      <% end %>
+      </select>
+    </p>
 
     <p>Due: <input type="date" name="due" value="<%= @task.due %>"></p>
     <% if @task.status == false %>
