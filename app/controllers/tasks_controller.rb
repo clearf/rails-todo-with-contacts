@@ -13,6 +13,7 @@ end
 
 def create
   task_info = params[:task_info]
+  due_date = params[:due_date]
   task = Task.new
   task.task_info = task_info
   task.due_date = due_date

@@ -2,8 +2,8 @@
 
 <h3>Tasks assigned: </h3>
 <% @contact.tasks.each do |task| %>
-  <%= task.task_info %>
-  <% end %><br><br>
+  <%= task.task_info %><br>
+  <% end %><br>
 
 <a href="/contacts/<%= @contact.id %>/edit">Edit Contact</a>
 
