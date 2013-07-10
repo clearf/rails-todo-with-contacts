@@ -22,6 +22,7 @@ class TodosController < ApplicationController
     end
 
     todo.save
+    binding.pry
     redirect_to('/todos')
   end
 
@@ -40,11 +41,8 @@ class TodosController < ApplicationController
     todo.notes = params[:notes]
 
     contact_ids = params[:contact_ids]
-    contact_ids.each do |contact_id|
-      todo.contacts.each do |todo_contact|
-        if todo_contact.id == contact_id
-          break
-        end
+    if contact_ids
+      contact_ids.each do |contact_id|
         contact_to_add = Contact.find(contact_id)
         begin
           todo.contacts << contact_to_add
