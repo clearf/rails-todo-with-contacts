@@ -1,0 +1,18 @@
+<h1>Manage Your To-do's Here</h1>
+
+<p>Here'a list of your current to-do's:</p>
+
+<% if @todos.empty? %>
+  <ul><li>You currently do not have any tasks saved.</li></ul>
+<% else %>
+  <ul>
+    <% @todos.each do |task| %>
+      <li><%= task.name %> <a href="/todos/<%= task.id %>">(Details)</a></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<br>
+<h2>Wanna Add Another Task?</h2>
+<p>Create and add another task to your to-do list <a href="/todos/new">here</a></p>
+

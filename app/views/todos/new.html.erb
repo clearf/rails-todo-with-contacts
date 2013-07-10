@@ -1,0 +1,18 @@
+<h1>Create a New Task!</h1>
+
+<form action="/todos" method="POST">
+  <input type="text" name="name" size="50px" placeholder="Enter your task here" autofocus><br/>
+  <input type="text" name="note" size="50px" placeholder="Leave a note of your task"><br/>
+
+  Assign this task to:
+    <select name="contact">
+        <% @contacts.each do |person| %>
+          <option value="<%= person[:id] %>">
+            <%= person.name %>
+          </option>
+        <% end %>
+    </select>
+    <br/>
+
+  <button>Add This Task</button>
+</form>

@@ -1,0 +1,19 @@
+<h1>Edit Your Task Here</h1>
+
+<form action="/todos/<%= @task.id %>" method="POST">
+  <input type="text" name="name" size="50px" value="<%= @task.name %>"><br/>
+  <input type="text" name="note" size="50px" value="<%= @task.note %>"><br/>
+
+  Assign this task to:
+  <select name="contact">
+      <% @contacts.each do |person| %>
+        <option value="<%= person[:id] %>">
+          <%= person.name %>
+        </option>
+      <% end %>
+  </select>
+
+  <br/>
+  <input type="hidden" name="_method" value="PUT">
+  <button>Save this edit</button>
+</form>

@@ -1,0 +1,22 @@
+<h1>Details of This Worker</h1>
+
+<ul>
+  <li>Name: <%= @contact.name %></li>
+  <li>Title: <%= @contact.title %></li>
+  <li>Assigned to following tasks:
+      <% if @assigned_tasks.empty? %>
+        <%= "No tasks assigned" %>
+      <% else %>
+        <% @assigned_tasks.each do |task| %>
+        <ul><li><%= task.name %> (<a href="/todos/<%= task[:id] %>">Go to this task</a>)</li></ul>
+        <% end %>
+      <% end %>
+  </li>
+</ul>
+
+<a href="/contacts/<%= @contact.id %>/edit"><button>Edit this contact</button></a>
+
+<form action="/contacts/<%= @contact.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button>Delete this person</button>
+</form>

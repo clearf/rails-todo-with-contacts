@@ -1,0 +1,8 @@
+<h1>Edit This Contact Here</h1>
+
+<form action="/contacts/<%= @contact.id %>" method="POST">
+  <input type="text" name="name" size="50px" value="<%= @contact.name %>"><br/>
+  <input type="text" name="title" size="50px" value="<%= @contact.title %>"><br/>
+    <input type="hidden" name="_method" value="PUT">
+  <button>Save this edit</button>
+</form>
