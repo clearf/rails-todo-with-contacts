@@ -1,0 +1,13 @@
+<h1>Create a new contact</h1>
+
+<form action="/contacts" method="post">
+  <input type="text" name="name" placeholder="Input name"><br><br>
+  <label>Assign a task: </label><br>
+
+  <select name="task">
+    <% @task.each do |task| %>
+    <option value="<%= task.id %>"><%= task.task_info %></option>
+    <% end %>
+  </select>
+  <button>Create task</button>
+</form>
