@@ -5,6 +5,10 @@
 <p>To be completed by: <%= @task.due_date %></p>
 <% end %>
 
+<% @task.contacts.each do |contact| %>
+<p>Contact assigned: <a href="/contacts/<%= contact.id %>"><%= contact.name %></a></p>
+<% end %>
+
 <a href="/tasks/<%= @task.id %>/edit">Edit Task</a>
 
 <form action="/tasks/<%= @task.id %>" method="POST">

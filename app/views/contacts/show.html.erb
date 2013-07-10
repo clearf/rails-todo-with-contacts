@@ -1,0 +1,6 @@
+<h1><%= @contact.name %></h1>
+
+<h3>Tasks assigned: </h3>
+<% @contact.tasks.each do |task| %>
+  <%= task.task_info %>
+  <% end %>
