@@ -1,6 +1,7 @@
 RailsTodo::Application.routes.draw do
   root :to => 'welcome#index'
   resources :tasks
+  resources :contacts
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

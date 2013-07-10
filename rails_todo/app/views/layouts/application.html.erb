@@ -7,10 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<a href="/">Home</a>
-<a href="/tasks">Tasks</a>
-<a href="/tasks/new">Add New Task</a>
-
+<ul class="nav">
+  <li><a href="/">Home</a></li>
+  <li><a href="/tasks">Tasks</a></li>
+  <li><a href="/tasks/new">Add New Task</a></li>
+  <li><a href="/contacts">Contacts</a></li>
+  <li><a href="/contacts/new">Add New Contact</a></li>
+</ul>
 <%= yield %>
 
 </body>

@@ -1,0 +1,7 @@
+.nav li {
+    display: inline;
+    padding-right: 15px;
+    font-family: Georgia;
+}
+
+body { font-family: Georgia }
