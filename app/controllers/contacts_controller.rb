@@ -12,6 +12,7 @@ class ContactsController < ApplicationController
 
   def show
     @contact = Contact.find(params[:id])
+    @assigned_tasks = Contact.find(params[:id]).todos
   end
 
   def create

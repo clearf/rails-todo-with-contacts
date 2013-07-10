@@ -3,6 +3,15 @@
 <ul>
   <li>Name: <%= @contact.name %></li>
   <li>Title: <%= @contact.title %></li>
+  <li>Assigned to following tasks:
+      <% if @assigned_tasks.empty? %>
+        <%= "No tasks assigned" %>
+      <% else %>
+        <% @assigned_tasks.each do |task| %>
+        <ul><li><%= task.name %> (<a href="/todos/<%= task[:id] %>">Go to this task</a>)</li></ul>
+        <% end %>
+      <% end %>
+  </li>
 </ul>
 
 
