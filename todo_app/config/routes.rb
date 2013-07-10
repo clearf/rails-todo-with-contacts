@@ -8,4 +8,5 @@ TodoApp::Application.routes.draw do
   put '/todos/:id' => 'todos#update'
   delete '/todos/:id' => 'todos#destroy'
   get '/contacts' => 'contacts#index'
+  get '/contacts/:id' => 'contacts#show'
 end
