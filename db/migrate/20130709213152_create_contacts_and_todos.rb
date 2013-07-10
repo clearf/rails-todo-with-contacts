@@ -4,6 +4,7 @@ class CreateContactsAndTodos < ActiveRecord::Migration
       t.belongs_to :contact
       t.belongs_to :todo
     end
+    add_index :contacts_todos, [:contact_id, :todo_id], unique: true
   end
 
   def down

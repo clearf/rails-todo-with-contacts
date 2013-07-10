@@ -14,9 +14,11 @@ class TodosController < ApplicationController
     todo.notes = params[:notes]
 
     contact_ids = params[:contact_ids]
-    contact_ids.each do |contact_id|
-      contact = Contact.find(contact_id)
-      todo.contacts << contact
+    if contact_ids
+      contact_ids.each do |contact_id|
+        contact = Contact.find(contact_id)
+        todo.contacts << contact
+      end
     end
 
     todo.save
@@ -44,7 +46,10 @@ class TodosController < ApplicationController
           break
         end
         contact_to_add = Contact.find(contact_id)
-        todo.contacts << contact_to_add
+        begin
+          todo.contacts << contact_to_add
+        rescue
+        end
       end
     end
 
