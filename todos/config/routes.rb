@@ -9,6 +9,7 @@ Todos::Application.routes.draw do
   delete '/todos/:id' => 'todos#destroy'
 
   get '/contacts' => 'contacts#index'
+  get '/contacts/new' => 'contacts#new'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
