@@ -31,7 +31,7 @@ class TodosController < ApplicationController
 
   def update
     @todo = Todo.find(params[:id])
-    if params[:contact].to_i > 0  && @todo.contact_ids.include?(params[:contact].to_i) == false
+    if @todo.contact_ids.include?(params[:contact].to_i) == false  && params[:contact].to_i > 0
       @contact = Contact.find(params[:contact])
     end
     @todo.task = params[:task]
