@@ -5,7 +5,7 @@
   <% end %></p>
 
 <a href="/contacts/<%= @contact.id %>/edit">Edit Contact</a>
-
+<br/><br/>
 <form action="/contacts/<%= @contact.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <button>Delete Contact</button>

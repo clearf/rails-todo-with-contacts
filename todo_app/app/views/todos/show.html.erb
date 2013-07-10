@@ -8,7 +8,7 @@
   <% end %></p>
 
 <a href="/todos/<%= @todo.id %>/edit">Edit Task</a>
-
+<br/><br/>
 <form action="/todos/<%= @todo.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <button>Delete Task</button>
