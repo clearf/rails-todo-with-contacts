@@ -10,7 +10,7 @@
   Add Contact to Task: <select name="contact">
     <option value="" selected></option>
     <% @contacts.each do |person| %>
-      <option value="<%= person.id %>">
+      <option value="<%= person %>">
           <%= person.name %>
       </option>
     <% end %>

@@ -30,19 +30,19 @@ class TodosController < ApplicationController
   end
 
   def update
-    if params[:contact].to_i > 0
+    @todo = Todo.find(params[:id])
+    if params[:contact] != "" && params[:contact].attributes["id"].to_i > 0 && @todo.contacts.include?(params[:contact]) == false
       @contact = Contact.find(params[:contact])
     end
-    todo = Todo.find(params[:id])
-    todo.task = params[:task]
-    todo.description = params[:description]
-    todo.due_date = params[:due_date]
-    todo.completed = params[:completed]
+    @todo.task = params[:task]
+    @todo.description = params[:description]
+    @todo.due_date = params[:due_date]
+    @todo.completed = params[:completed]
     if @contact
-      todo.contacts << @contact
+      @todo.contacts << @contact
     end
-    todo.save
-    redirect_to("/todos/#{todo.id}")
+    @todo.save
+    redirect_to("/todos/#{@todo.id}")
   end
 
   def destroy
