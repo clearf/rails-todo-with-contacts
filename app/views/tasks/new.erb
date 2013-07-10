@@ -4,5 +4,11 @@
 	<input type= "date" name = "due" placeholder = "due">
 	<label for="urgent">Urgent</label>
 	<input type="checkbox" name = "urgent">
+	<% if @contacts %>
+		<select type="dropdown" name="person">
+			<%contacts.each do |contact|%>
+				<option value = "<%=contact.id%>"><%=contact.name%></option>
+			<%end%>
+		</select>
  	<button>Add Task</button>
 </form>

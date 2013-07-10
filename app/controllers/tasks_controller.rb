@@ -4,6 +4,7 @@ class TasksController < ApplicationController
 	end
 
 	def new
+		@contacts = Contact.all
 
 	end
 
@@ -29,6 +30,7 @@ class TasksController < ApplicationController
 
 	def edit
 		@task=Task.find(params[:id])
+		@contacts = Contact.all
 	end
 
 	def update
