@@ -1,0 +1,8 @@
+<h1>Title: <%= @todo.title %></h1>
+<h2>Description: <%= @todo.description %></h2>
+<a href="/<%=@todo.id %>/edit">Edit</a>
+
+<form action="/<%= @todo.id%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button>Delete</button>
+</form>
