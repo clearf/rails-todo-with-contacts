@@ -1,0 +1,10 @@
+<h1>Check out these to-dos!</h1>
+<ul>
+    <% @todos.each do |todo| %>
+      <li>
+        <a href="/todos/<%= todo.id %>">
+          <%= todo.name %>
+        </a>
+      </li>
+    <% end %>
+</ul>

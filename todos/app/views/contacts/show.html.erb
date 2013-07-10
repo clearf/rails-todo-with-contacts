@@ -1,0 +1,10 @@
+<h1><%= @contact.name %></h1>
+<ul>
+  <li>Telephone: <%= @contact.phone %></li>
+</ul>
+
+<a href="/contacts/<%= @contact.id %>/edit">Edit Contact</a>
+<form action="/contacts/<%= @contact.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button>Delete Contact</button>
+</form>

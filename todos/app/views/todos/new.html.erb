@@ -1,0 +1,18 @@
+<h1>Create a new to-do</h1>
+<form action="/todos" method="post">
+  <label for="name">Enter a to-do name</label><br/>
+  <input type="text" name="name" autofocus="true"><br/>
+  <label for="description">Enter a short description</label><br/>
+  <input type="text" name="description"><br/>
+  <label for="due_date">Enter a due date (mm/dd/yyyy)</label><br/>
+  <input type="text" name="due_date"><br/>
+  <label for="contact_id">Select a contact</label>
+  <select name="contact_id">
+    <% @contacts.each do |contact| %>
+      <option value="<%= contact.id %>">
+        <%= contact.name %>
+      </option>
+    <% end %>
+  </select><br/>
+  <button>Submit</button>
+</form>
