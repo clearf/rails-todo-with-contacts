@@ -6,7 +6,11 @@
   <p>Assigned to:</p>
   <% @contacts.each do |contact| %>
     <li>
+      <% if @todo.contacts.include?(contact) %>
+      <input type='checkbox' name='contact_ids[]' value='<%= contact.id %>' checked='yes'/> <%= "#{contact.first_name} #{contact.last_name}" %>
+      <% else %>
       <input type='checkbox' name='contact_ids[]' value='<%= contact.id %>' /> <%= "#{contact.first_name} #{contact.last_name}" %>
+      <% end %>
     </li>
     <% end %>
   <p>Done? <% if @todo.done %>
