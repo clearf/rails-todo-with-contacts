@@ -1,0 +1,24 @@
+ <h1>Edit Task <%= @task.id %></h1>
+
+  <form action="/tasks/<%= @task.id %>" method="post">
+    <p>Task: <input type="text" name="todo" value="<%= @task.todo %>"></p>
+    <p>Details: <input type="text" name="details" value="<%= @task.details %>"></p>
+
+
+    <p>Person Assigned:
+      <select name="contact">
+      <% @contacts.each do |contact| %>
+        <option value="<%= contact.id %>"><%= contact.name %></option>
+      <% end %>
+      </select>
+    </p>
+
+    <p>Due: <input type="date" name="due" value="<%= @task.due %>"></p>
+    <% if @task.status == false %>
+    <p>Status: <input type="radio" name="status" value="true"><label for="status_completed">Complete</label>  <input type="radio" name="status" value="false" checked><label for="status_progress">Working on it!</label></p>
+    <% else %>
+      <p>Status: Completed</p>
+    <% end %>
+    <input type="hidden" name="_method" value="put">
+    <button>Update</button>
+  </form>

@@ -1,0 +1,30 @@
+<h1>Task <%= @task.id %></h1>
+
+  <p>Todo:
+    <%= @task.todo %>
+  </p>
+  <p>Details:
+    <%= @task.details %>
+  </p>
+  <p>Due:
+    <%= @task.due %>
+  </p>
+  <p>Person Assigned:
+    <% @task.contacts.each do |contact| %>
+      <li><%= contact.name %></li>
+    <% end %>
+  </p>
+  <p>Status:
+    <% if @task.status == false %>
+      <%= "Working on it" %>
+    <% else %>
+      <%= "Complete" %>
+    <% end %>
+</p>
+
+  <a href="/tasks/<%= @task.id %>/edit"><button>Edit</button></a>
+
+  <form action="/tasks/<%= @task.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button>Delete</button>
+  </form>

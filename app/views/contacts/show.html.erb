@@ -1,0 +1,13 @@
+<h1>Tasks for <%= @contact.name %></h1>
+<p>
+    <%@tasks.each do |task|%>
+      <li><a href = "/tasks/<%=task.id%>"><%=task.todo%></a></li>
+    <%end%>
+</p>
+<form action = "/contacts/<%=@contact.id%>/edit" method = "get">
+  <input type = "hidden" name = "edit">
+  <button> Edit </button>
+</form>
+<form action="/contacts/<%=@contact.id%>" method="post">
+<input type="hidden" name="_method" value="delete">
+  <button> Delete </button>
